@@ -113,9 +113,15 @@ namespace EnumProduct
 
         public void SellProduct(int id, int sellamount)
         {
+            
             Product product = (Product)Products[id - 1];
+            if(sellamount<= product.Quantity)
+            {
+                product.Quantity -= sellamount;
+                Console.WriteLine(" The product successfully sold!");
+            }
 
-            product.Quantity -= sellamount;
+          
 
         }
 

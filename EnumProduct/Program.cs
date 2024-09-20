@@ -201,7 +201,7 @@ else if (temp == "6")
 
     Console.WriteLine("Do you want to continue?y/n");
 
-    string restart = Console.ReadLine();
+    string restart = Console.ReadLine()??"";
 
     if (restart == "y")
     {
@@ -216,6 +216,18 @@ else if (temp == "7")
 {
     Console.Write(" Total quantity is ");
     Console.WriteLine(controller.TotalQuantity());
+    Console.WriteLine("Do you want to continue?y/n");
+
+    string restart = Console.ReadLine()??"";
+
+    if (restart == "y")
+    {
+        goto restart;
+    }
+    else if (restart == "n")
+    {
+        Console.WriteLine("The process is finished!");
+    }
 }
 else if(temp == "8")
 {
@@ -226,11 +238,24 @@ else if(temp == "8")
 
     int id = Convert.ToInt32( Console.ReadLine());
 
+    Console.WriteLine("how many product do you want to sell?");
     int sellamount = Convert.ToInt32( Console.ReadLine());
 
     controller.SellProduct( id, sellamount);
 
 
+    Console.WriteLine("Do you want to continue?y/n");
+
+    string restart = Console.ReadLine()??"";
+
+    if (restart == "y")
+    {
+        goto restart;
+    }
+    else if (restart == "n")
+    {
+        Console.WriteLine("The process is finished!");
+    }
 }
 
 
